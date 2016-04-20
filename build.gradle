@@ -1,0 +1,8 @@
+//apply plugin:'java'
+//project(':client').afterEvaluate { client -> client.compile.dependsOn ":data:install" }
+project(':client') {
+    apply plugin:'java'
+    dependencies {
+        compile project (':data')
+    }
+}
