@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+     //maven { url "http://repo.maven.apache.org/maven2" }
+    jcenter()
+}
+
+dependencies {
+    compile group: 'com.google.guava', name: 'guava', version:'19.+'
+    compile group: 'org.apache.sling', name: 'org.apache.sling.commons.json', version:'2.0.6'
+    compile group: 'net.sf.opencsv', name: 'opencsv', version:'2.1'
+    testCompile 'junit:junit:[4.11,)'
+}
+
+task processChar(type: JavaExec) {
+    main = 'com.plr.charfetcher.CharOcc'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+jar.doLast()  {
+    println "Execute CharOcc"
+    tasks.processChar.execute()
+}
