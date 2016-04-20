@@ -1,0 +1,24 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:w="urn:import:com.plr.hanzi.client.view.welcome"
+ ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+    ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+    ui:generateLocales="default"
+>
+
+	<ui:style>
+		.panel {
+			margin: 0px auto;
+		}
+	</ui:style>
+	<ui:with field='hz' type='com.plr.hanzi.client.i18n.HanziMessages'/>
+	<g:HTMLPanel>
+		<g:VerticalPanel styleName="{style.panel}" spacing="10" horizontalAlignment="ALIGN_CENTER">
+			<w:CustomButton text="{hz.welcome_button_flashcards}" ui:field="flashcards" width="160px" />
+			<w:CustomButton text="{hz.welcome_button_shishenme}" ui:field="guesser" width="160px"/>
+			<w:CustomButton text="{hz.welcome_button_charBrowser}" ui:field="browser" width="160px"/>
+			<w:CustomButton text="{hz.welcome_button_about}" ui:field="about" width="160px"/>
+			<w:CustomButton text="Login" ui:field="login" width="160px"/>
+			<w:CustomButton text="Facebook" ui:field="facebook" width="160px"/>
+		</g:VerticalPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

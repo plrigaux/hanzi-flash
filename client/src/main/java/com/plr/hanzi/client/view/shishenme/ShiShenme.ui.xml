@@ -1,0 +1,55 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d='urn:import:com.plr.hanzi.client.view.definition'>
+	<ui:style type="com.plr.hanzi.client.view.shishenme.StyleAnswer">
+		.important {
+			font-weight: bold;
+		}
+		
+		.ok {
+			color: green;
+			font-size: larger;
+		}
+		
+		.wrong {
+			color: red;
+			font-size: larger;
+		}
+		
+		.askedChar {
+			font-size: larger;
+		}
+		
+		.result {
+			font-size: 175%;
+			margin-top: 15px;
+		}
+		
+		.resultShow {
+			height: 48px;
+			line-height:48px;
+			margin-bottom: 15px;
+			vertical-align: middle;
+		}
+	</ui:style>
+	
+	<g:HTMLPanel>
+		<div style="text-align:center">
+			<g:Label ui:field="character"  />
+
+
+			<g:TextBox ui:field='answer' width="75px" />
+			<g:Button ui:field='answerValidate' text="Validate" />
+			<d:DefinitionPanel ui:field='definitionPanel' />
+			<g:VerticalPanel ui:field='vPanel' />
+
+			<div class='{style.result}'>
+				<div ui:field='result' class='{style.resultShow}'>
+				</div>
+				<div ui:field='explanation'>
+				</div>
+			</div>
+		</div>
+
+	</g:HTMLPanel>
+</ui:UiBinder> 

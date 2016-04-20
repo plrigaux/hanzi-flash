@@ -1,0 +1,57 @@
+<!DOCTYPE ui:UiBinder SYSTEM 'http://dl.google.com/gwt/DTD/xhtml.ent'>
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:d='urn:import:com.plr.hanzi.client.view.definition'>
+
+	<ui:style>
+		.header {
+			font-size: 110%;
+			font-weight: bold;
+			color: #555
+		}
+		
+		.label {
+			font-weight: bold;
+			width: 75px;
+		}
+		
+		.panel {
+			margin: 0px auto;
+		}
+	</ui:style>
+	<ui:with field='message' type='com.plr.hanzi.client.i18n.HanziMessages' />
+	<g:ScrollPanel>
+		<g:HTMLPanel>
+			<table class="{style.panel}">
+				<tr>
+					<td colspan='2' align='center' class='{style.header}'>
+						<ui:text from="{message.detail_character}" />
+					</td>
+				</tr>
+				<tr>
+					<td class='{style.label}'>
+						<ui:text from="{message.detail_rank}" />
+					</td>
+					<td>
+						<g:Label ui:field='idLabel' />
+					</td>
+				</tr>
+				<tr>
+					<td class='{style.label}'>
+						<ui:text from="{message.detail_character}" />
+					</td>
+					<td>
+						<g:Label ui:field='characterLabel' />
+					</td>
+				</tr>
+
+				<tr>
+					<td class='{style.label}'>
+						<ui:text from="{message.detail_definition}" />
+					</td>
+					<td>
+						<d:DefinitionPanel ui:field='definitionPanel' />
+					</td>
+				</tr>
+			</table>
+		</g:HTMLPanel>
+	</g:ScrollPanel>
+</ui:UiBinder>

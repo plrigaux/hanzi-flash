@@ -1,0 +1,77 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d='urn:import:com.plr.hanzi.client.view.definition'
+	xmlns:generic="urn:import:org.apache.bcel.generic" xmlns:w="urn:import:com.plr.hanzi.client.view.welcome" xmlns:f="urn:import:com.plr.hanzi.client.view.flashcard">
+	<ui:style type="com.plr.hanzi.client.view.flashcard.FlashCardStyle">
+		.important {
+			font-weight: bold;
+		}
+		
+		.enabled {
+			display: block;
+		}
+		
+		.disabled {
+			display: none;
+		}
+		
+		.panel {
+			text-align: center;
+		}
+		
+		.button {
+			height: 100%;
+		}
+		
+		
+		
+		.labelPanel {
+			margin: 0px auto;
+			text-align: center;
+		}
+		
+		.definitionPanel {
+			margin: 0px auto;
+			text-align: left;
+			width: 300px;
+		}
+	</ui:style>
+	
+	<ui:with field='resource' type='com.plr.hanzi.client.style.AppResources'/>
+	<g:DockLayoutPanel unit='EM'>
+
+		<g:north size='2'>
+			<f:FlashCardCounter ui:field="counter" />
+		</g:north>
+
+		<g:center>
+			<g:ScrollPanel>
+				<g:HTMLPanel styleName="{style.panel}">
+					<div class="{style.labelPanel}">
+						<g:Label ui:field="character" />
+					</div>
+
+					<div width="100%">
+						<d:DefinitionPanel styleName="{style.definitionPanel}" ui:field='definitionPanel' />
+					</div>
+				</g:HTMLPanel>
+			</g:ScrollPanel>
+		</g:center>
+
+		<g:south size='3'>
+			<g:HTMLPanel styleName="{style.panel}">
+				<w:CustomButton ui:field="show" text="Show" addStyleNames="{resource.style.actionButton}" />
+				<div ui:field="buttonsDiv" class="{style.disabled}">
+					<w:CustomButton ui:field="again" text="Again" />
+
+					<w:CustomButton ui:field="hard" text="Hard" />
+
+					<w:CustomButton ui:field="good" text="Good" />
+
+					<w:CustomButton ui:field="easy" text="Easy" />
+
+<!-- 					<w:CustomButton ui:field="trivial" text="Trivial" /> -->
+				</div>
+			</g:HTMLPanel>
+		</g:south>
+	</g:DockLayoutPanel>
+</ui:UiBinder> 

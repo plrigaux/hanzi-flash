@@ -1,0 +1,31 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:c='urn:import:com.google.gwt.user.cellview.client'
+	xmlns:s='urn:import:com.plr.hanzi.client.view.dictionnary'>
+
+	<ui:style>
+		.scrollable {
+			height: 400px;
+			width: 160px;
+			border: 1px solid #ccc;
+			text-align: left;
+		}
+		
+		.contactFormCell {
+			padding-left: 20px;
+		}
+		
+		.panel {
+			margin: 0px auto;
+		}
+	</ui:style>
+
+	<g:HTMLPanel>
+
+		<c:SimplePager ui:field='pager' addStyleNames='{style.panel}'/>
+		<c:CellTable addStyleNames='{style.scrollable} {style.panel}' ui:field='cellTable' />
+
+		<!-- <s:ZwCharDetails ui:field='contactForm' /> -->
+
+	</g:HTMLPanel>
+</ui:UiBinder>

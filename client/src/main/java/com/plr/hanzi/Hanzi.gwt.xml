@@ -1,0 +1,48 @@
+<!DOCTYPE module PUBLIC "//gwt-module/" "http://google-web-toolkit.googlecode.com/svn/tags/1.6.2/distro-source/core/src/gwt-module.dtd">
+<module>
+	<set-configuration-property name="UiBinder.usesafeHtmlTemplates" value="true" />
+
+
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User' />
+
+	<!-- Inherit the default GWT style sheet. You can change -->
+	<!-- the theme of your GWT application by uncommenting -->
+	<!-- any one of the following lines. -->
+	<inherits name='com.google.gwt.user.theme.clean.Clean' />
+	<!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class='com.plr.hanzi.client.Application' />
+
+	<!-- Specify the application specific style sheet. -->
+	<!-- <stylesheet src='flashcard.css' /> -->
+
+	<source path='client' />
+
+
+	<!-- <set-property name="locale" value="default"/> -->
+
+
+	<inherits name="com.google.gwt.i18n.I18N" />
+
+	<inherits name="com.google.gwt.resources.Resources" />
+	<inherits name="com.google.gwt.json.JSON" />
+<inherits name="com.google.api.gwt.oauth2.OAuth2" />
+	<inherits name="com.google.web.bindery.autobean.AutoBean" />
+	<inherits name="com.google.common.base.Base" />
+	<!-- <inherits name="com.google.gwt.i18n.I18N" /> -->
+
+	<!-- English language, independent of country -->
+	<extend-property name="locale" values="en" />
+	<extend-property name="locale" values="fr" />
+	<set-property-fallback name="locale" value="en" />
+
+	<inherits name="com.google.gwt.logging.Logging" />
+	<set-property name="gwt.logging.logLevel" value="FINE" />
+	<set-property name="gwt.logging.enabled" value="TRUE" />
+	<!-- set-property name="gwt.logging.popupHandler" value="DISABLED" /-->
+
+</module>

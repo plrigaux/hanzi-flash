@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d='urn:import:com.plr.hanzi.client.view.definition'
+	xmlns:generic="urn:import:org.apache.bcel.generic" xmlns:w="urn:import:com.plr.hanzi.client.view.welcome">
+	<ui:style>
+		.again {
+			color: red;
+		}
+		
+		.todo {
+			color: blue;
+			text-decoration: underline;
+		}
+	</ui:style>
+	<g:HorizontalPanel spacing="10">
+		<g:Label ui:field="again" styleName="{style.again}" />
+		<g:Label ui:field="todo" styleName="{style.todo}" />
+	</g:HorizontalPanel>
+</ui:UiBinder> 

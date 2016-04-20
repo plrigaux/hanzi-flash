@@ -1,0 +1,58 @@
+apply plugin: 'war'
+apply plugin: 'java'
+apply plugin: 'gwt'
+apply plugin: 'eclipse'
+apply plugin: 'jetty'
+
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+    compile 'com.google.guava:guava-gwt:10.0.1'
+    runtime 'org.json:json:20090211'
+    gwt files('lib/gwt-oauth2-0.2-alpha.jar')
+} 
+
+buildscript {
+    repositories {
+        jcenter() //repository where to fetch gwt gradle plugin
+    }
+    dependencies {
+        classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+    }
+}
+ 
+// central repository to load the GWT library
+repositories {
+    mavenCentral()
+}
+
+def devWarVar = file('devWar')
+def dataDir = file('../data/target/cedict')
+
+gwt {
+    gwtVersion = '2.7.0'
+    modules = ['com.plr.hanzi.Hanzi']
+    logLevel = 'INFO'
+    devWar = devWarVar
+}
+
+//copy the the data file in the dev war
+task copyDataToWar(type:Copy, dependsOn:[gwt]) {
+    copy {
+        from dataDir
+        into devWarVar
+    }
+}
+
+clean.doFirst {
+    println "clean devWar file $devWarVar"
+    delete devWarVar
+}
+
+war {
+    from (dataDir)
+    baseName 'hanzi'
+}
